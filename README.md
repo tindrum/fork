@@ -1,6 +1,11 @@
 # fork
 CS 351 assignment 1, about forking processes
 
+The actual assignment text begins at ## Assignment 1, below.
+
+
+
+
 ## Assignment 1
 ### CS-351
 ### Fall 2015
