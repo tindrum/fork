@@ -3,7 +3,13 @@ CS 351 assignment 1, about forking processes
 
 The actual assignment text begins at ## Assignment 1, below.
 
+Compile with command ```g++ parallel.cpp -o par.run```
 
+You can create any executable name you want, 
+but I've put ```*.run``` in the ```.gitignore``` file.
+This will keep our executables from being saved into the 
+git repository. Saving them would just waste space, and
+we can't really run them on all platforms anyway. 
 
 
 ## Assignment 1
