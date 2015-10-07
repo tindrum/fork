@@ -21,7 +21,7 @@ using namespace std;
 int main (int argc, char const *argv[])
 {
   
-  cout << "basic stub";
+  cout << "basic stub" << endl;
   /* code */
   return 0;
 }
