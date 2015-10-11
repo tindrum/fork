@@ -61,6 +61,16 @@ int main (int argc, char const *argv[])
 
   while ( !urlFile.eof() ) {
   	getline(urlFile, textLine);
+
+	int pid = fork();
+	if (pid == 0)
+	{
+		execlp("usr/bin/wget", "wget", textLine, NULL);
+	}
+	else
+	{
+		wait(NULL);
+	}
   	// process each line
   	cout << textLine << endl;
   }
