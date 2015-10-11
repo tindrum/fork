@@ -1,0 +1,2 @@
+http://releases.ubuntu.com/15.04/ubuntu-15.04-desktop-amd64.iso
+http://releases.ubuntu.com/14.10/ubuntu-14.10-server-i386.iso
