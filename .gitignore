@@ -1,5 +1,13 @@
 .DS_Store
 *.run
 
+*.jpg
+*.JPG
+*.gif
+*.GIF
+*.png
+*.PNG
+# add other image file types, as needed
+
 
 _

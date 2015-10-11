@@ -15,6 +15,8 @@
 #include <iostream>
 #include <fstream>
 #include <cstdio>
+#include <sys/types.h>
+#include <sys/wait.h>
 
 
 
@@ -62,17 +64,17 @@ int main (int argc, char const *argv[])
   while ( !urlFile.eof() ) {
   	getline(urlFile, textLine);
 
-	int pid = fork();
-	if (pid == 0)
-	{
-		execlp("usr/bin/wget", "wget", textLine, NULL);
-	}
-	else
-	{
-		wait(NULL);
-	}
-  	// process each line
-  	cout << textLine << endl;
+  	int pid = fork();
+  	if (pid == 0)
+  	{
+      cout << "forked, trying to wget the file " << textLine << endl;
+  		execlp("/usr/bin/wget", "wget", textLine.c_str(), NULL);
+  	}
+  	else
+  	{
+      cout << "Waiting" << endl;
+  		wait(NULL);
+  	}
   }
 
 
