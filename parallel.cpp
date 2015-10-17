@@ -71,5 +71,5 @@ int main (int argc, char const *argv[])
     timeDiff = difftime(endTime, startTime);
     cout << timeDiff << endl;
 
-  return 0;
+    return 0;
 }
