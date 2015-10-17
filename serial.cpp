@@ -52,8 +52,16 @@ int main (int argc, char const *argv[])
   	if (pid == 0)
   	{
       cout << "forked, trying to wget the file " << textLine << endl;
-  		execlp("/usr/bin/wget", "wget", textLine.c_str(), NULL);
+  		if (execlp("/usr/bin/wget", "wget", textLine.c_str(), NULL) < 0)
+      {
+        cout << "execlp wasn't able to run" << endl;
+      }
   	}
+    else if ( pid < 0){
+      cout << "failed to fork process" << endl;
+        perror("fork");
+        exit(-1);
+    }
   	else
   	{
       cout << "Waiting" << endl;

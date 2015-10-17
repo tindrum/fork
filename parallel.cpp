@@ -47,10 +47,17 @@ int main (int argc, char const *argv[])
 		int pid = fork();
 		if (pid == 0)
 		{
-			execlp("/usr/bin/wget", "wget", textLine.c_str(), NULL);
+			if ( execlp("/usr/bin/wget", "wget", textLine.c_str(), NULL) < 0)
+			{
+				cout << "execlp failed to work" << endl;
+			}
 		}
-		// process each line
-		cout << "this should only happen never" << endl;
+		else if (pid < 0)
+		{
+    		cout << "error creating fork" << endl;
+    		perror("fork");
+    		exit(-1);
+		}
 	}
 	while (childCount > 0)
 	{

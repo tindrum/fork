@@ -1,2 +1,10 @@
 http://download.wavetlan.com/SVV/Media/HTTP/WAV/QuickTime/QuickTime_test3_LPCM_Mono_CBR_8SS_64000Hz.wav
-http://download.wavetlan.com/SVV/Media/HTTP/WAV/QuickTime/QuickTime_test3_LPCM_Mono_CBR_8SS_64000Hz.wav
+https://archive.org/download/gettysburg_johng_librivox/gettysburg_address.mp3
+https://www.dropbox.com/s/xj7cga4ju6ibxsv/Two_Scoops_of_Django_v1.8.pdf?dl=0
+https://www.dropbox.com/s/9pvkmjpee0ttqbu/arduino_p4_0.pdf?dl=0
+https://www.dropbox.com/s/7b5m96y5hd10h19/The_LaTeX_Companion.pdf?dl=0
+https://www.dropbox.com/s/ha4c4rtbzfhwq21/Homotopy%20Type%20Theory%20-%20Univalent%20Foundations%20of%20Mathematics.pdf?dl=0
+https://www.dropbox.com/s/qvn3g3casoqnzds/practical-vim_p1_1.pdf?dl=0
+https://www.dropbox.com/s/dgwifuonpvkprb9/Version_Control_with_Git_Second_Edition.pdf?dl=0
+https://www.dropbox.com/s/2qyfyvao4ahf6bk/bash_Cookbook.pdf?dl=0
+https://www.dropbox.com/s/zg425blg97esali/core-data_p2_0.pdf?dl=0
