@@ -15,6 +15,7 @@
 #include <iostream>
 #include <fstream>
 #include <cstdio>
+#include <sys/wait.h>
 
 
 
@@ -65,7 +66,7 @@ int main (int argc, char const *argv[])
 	int pid = fork();
 	if (pid == 0)
 	{
-		execlp("usr/bin/wget", "wget", textLine, NULL);
+		execlp("usr/bin/wget", "wget", textLine.c_str(), NULL);
 	}
 	else
 	{
