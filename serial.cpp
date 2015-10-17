@@ -17,6 +17,8 @@
 #include <cstdio>
 #include <sys/types.h>
 #include <sys/wait.h>
+#include <ctime>
+
 
 
 
@@ -24,27 +26,13 @@
 using namespace std;
 
 
-string fullURLFromPartial(string partialURL){
-	// builds a full url from an href link 
-	// in an APOD web page link
-	string siteURL = "http://apod.nasa.gov/apod";
-
-	return siteURL + "/" + partialURL;
-}
-
-
-string findImageURL(string urlText){
-	string fullGetCommand = "wget -r -np -A .txt " + urlText;
-
-	// FILE* file = peopen(strcat("wget -r -np -a .txt ", urlText.c_str()));
-	// not at all sure how to use wget inside a C++ program.
-
-	return "your url here";
-}
 
 int main (int argc, char const *argv[])
 {
-  cout << "basic stub" << endl;
+  cout << "getting start time" << endl;
+  double startTime, endTime, timeDiff;
+  startTime = time(NULL);
+
   cout << "serial file getter program" << endl;
   // open a file for reading
   
@@ -75,6 +63,13 @@ int main (int argc, char const *argv[])
       cout << "Waiting" << endl;
   		wait(NULL);
   	}
+
+
+    cout << "getting end time" << endl;
+    endTime = time(NULL);
+    cout << "Time difference is: " ;
+    timeDiff = difftime(endTime, startTime);
+    cout << timeDiff << endl;
   }
 
 
