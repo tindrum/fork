@@ -6,18 +6,21 @@
 // Nikita
 //
 #include <stdio.h>
+#include <stdlib.h>
 #include <unistd.h>
 #include <sys/types.h>
 #include <vector>
 #include <string.h>
 #include <iostream>
+#include <fstream>
+#include <cstdio>
+#include <sys/types.h>
+#include <sys/wait.h>
 
 using namespace std;
 
 int main (int argc, char const *argv[])
 {
-  
-	cout << "basic stub" << endl;
 	cout << "Parallel file getter program" << endl;
 	// open a file for reading
 
@@ -36,7 +39,7 @@ int main (int argc, char const *argv[])
 	string textLine;
 	int childCount = 0;
 
-	while (!urlFile.eof()) \
+	while (!urlFile.eof()) 
 	{
 		getline(urlFile, textLine);
 
@@ -44,10 +47,10 @@ int main (int argc, char const *argv[])
 		int pid = fork();
 		if (pid == 0)
 		{
-			execlp("usr/bin/wget", "wget", textLine, NULL);
+			execlp("/usr/bin/wget", "wget", textLine.c_str(), NULL);
 		}
 		// process each line
-		cout << textLine << endl;
+		cout << "this should only happen never" << endl;
 	}
 	while (childCount > 0)
 	{
@@ -55,5 +58,7 @@ int main (int argc, char const *argv[])
 		childCount--;
 	}
   
-  return 0;
+
+
+    return 0;
 }
