@@ -16,17 +16,11 @@
 #include <cstdio>
 #include <sys/types.h>
 #include <sys/wait.h>
-#include <ctime>
 
 using namespace std;
 
 int main (int argc, char const *argv[])
 {
-    cout << "getting start time" << endl;
- 	double startTime, endTime, timeDiff;
-    startTime = time(NULL);
-
-	cout << "basic stub" << endl;
 	cout << "Parallel file getter program" << endl;
 	// open a file for reading
 
@@ -65,11 +59,6 @@ int main (int argc, char const *argv[])
 	}
   
 
-    cout << "getting end time" << endl;
-    endTime = time(NULL);
-    cout << "Time difference is: " ;
-    timeDiff = difftime(endTime, startTime);
-    cout << timeDiff << endl;
 
     return 0;
 }
