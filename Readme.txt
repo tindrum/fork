@@ -24,3 +24,25 @@ that is?
 Is the downloader in the previous question still faster? If not so, why do you think that
 is?
 
+
+Big Files:
+SERIAL version:
+real	13m48.262s
+user	0m1.196s
+sys	0m3.988s
+
+Parallel version:
+real	12m21.350s
+user	0m1.840s
+sys	0m5.968s
+
+Tiny Files:
+Serial version:
+real	0m13.056s
+user	0m0.032s
+sys	0m0.036s
+
+parallel version:
+real	0m3.088s
+user	0m0.008s
+sys	0m0.056s
