@@ -33,9 +33,12 @@ Questions:
 2. Which is longer: user time or sys time? Use your knoweldge to explain why.
 
      The user time is small, because the process is not running interactively.
-     The system time is very small, since only a few system calls are being used.
+     The system time is small, since only a few system calls are being used.
      If the program was interactive, i.e. the user enters urls for each file he/she wants to
      download, the user time would be much greater than the system time.
+     The wget command, or any command spun off from an execlp, does not seem to count 
+     towards _sys_ or _user_ time. The spun-off task is not increasing the clock time
+     for the process that initiated it.
 
 3. When downloading the files above, which downloader finishes faster? 
    Why do you think that is?
