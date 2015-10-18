@@ -6,25 +6,53 @@ Joshua Edmonds
 
 Programming language: C++
 
+How to execute:
+Compile the .cpp files to executables using g++:
+```g++ parallel.cpp -o par.run```
+```g++ serial.cpp -o ser.run```
+When executing the files, we also want the timing information.
+Each executable requires an input text file, as well
+```time ./par.run large_urls.txt```
+```time ./ser.run large_urls.txt```
+or use tiny_files.txt to download the small files.
+This works if your current directory contains the source and executable files.
+If not, change directory (cd) to where the executables are.
+
 Questions:
 1. In the output of time, what is the difference between real, user, and sys times?
+
+     _real_ time is "wall clock time", the total time taken for the processes to run.
+     This is the time the user will experience. This time includes all the time 
+     the system is working on other processes and "blocked time", where the system is 
+     simply switching between our and other tasks.
+     _user_ time is time the processor spends in the user mode in this program.
+     It may be much smaller than Real time, because the system may have multiple users,
+     multiple programs running, and other factors.
+     _sys_ time is the time the system has spent on system calls for our processes. 
+
 2. Which is longer: user time or sys time? Use your knoweldge to explain why.
-   The user time is zero, or close to it, because the process is not running interactively.
-   The system time is very small, since only a few system calls are being used.
-   If the program was interactive, i.e. the user enters urls for each file he/she wants to
-   download, the user time would be much greater than the system time.
-3. When downloading the files above, which downloader finishes faster? Why do you think
-that is?
-   The parallel version runs faster with small file sizes. 
-   When running in serial, the incoming bandwidth is not a factor, nor is task switching.
-   The parallel version will saturate any incoming bandwidth.
-   More importantly, task switching between download tasks will become overhead,
-   and slow the overall process.
+
+     The user time is small, because the process is not running interactively.
+     The system time is very small, since only a few system calls are being used.
+     If the program was interactive, i.e. the user enters urls for each file he/she wants to
+     download, the user time would be much greater than the system time.
+
+3. When downloading the files above, which downloader finishes faster? 
+   Why do you think that is?
+
+     The parallel version runs faster with small file sizes. 
+     When running in serial, the incoming bandwidth is not a factor, nor is task switching.
+     The parallel version will saturate any incoming bandwidth.
+     More importantly, task switching between download tasks will become overhead,
+     and slow the overall process.
+
 4. Repeat the experiment for 10 files (any reasonably large-sized files, e.g., 100 MB, will do).
-Is the downloader in the previous question still faster? If not so, why do you think that
-is?
+   Is the downloader in the previous question still faster? If not so, why do you think that is?
 
+     
 
+We used a list of urls that get pdfs of various sizes, from a few megs up to 17.4 mb.
+These urls are in large_urls.txt.
 Big Files:
 SERIAL version:
 real	13m48.262s
@@ -36,6 +64,8 @@ real	12m21.350s
 user	0m1.840s
 sys	0m5.968s
 
+To test for small file sizes, we used images and other small downloadable items.
+These are in tiny_files.txt.
 Tiny Files:
 Serial version:
 real	0m13.056s
