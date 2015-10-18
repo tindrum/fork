@@ -1,8 +1,8 @@
 Assignment 1:
 
-Nikita Sadinidhi Vijayan
-Daniel Henderson
-Joshua Edmonds
+Nikita Sadinidhi Vijayan  sv.nikita91@csu.fullerton.edu
+Daniel Henderson          tindrum@csu.fullerton.edu
+Joshua Edmonds            jedmonds91011@csu.fullerton.edu
 
 Programming language: C++
 
@@ -11,12 +11,14 @@ Compile the .cpp files to executables using g++:
 ```g++ parallel.cpp -o par.run```
 ```g++ serial.cpp -o ser.run```
 When executing the files, we also want the timing information.
-Each executable requires an input text file, as well
+Each executable requires an input text file, as well.
 ```time ./par.run large_urls.txt```
 ```time ./ser.run large_urls.txt```
 or use tiny_files.txt to download the small files.
 This works if your current directory contains the source and executable files.
-If not, change directory (cd) to where the executables are.
+If not, change directory (cd) to where the source files are.
+
+Bonus: We have not chosen to implement the extra credit part of the excercise.
 
 Questions:
 1. In the output of time, what is the difference between real, user, and sys times?
@@ -52,6 +54,10 @@ Questions:
 4. Repeat the experiment for 10 files (any reasonably large-sized files, e.g., 100 MB, will do).
    Is the downloader in the previous question still faster? If not so, why do you think that is?
 
+     The download for larger files is still somewhat faster, but not by as much.
+     It may be that context-switching between the different forks is taking a larger
+     percentage of time, thereby reducing the amount of time spent actually downloading
+     files.
      
 
 We used a list of urls that get pdfs of various sizes, from a few megs up to 17.4 mb.
